@@ -13,7 +13,7 @@ def guess_number():
 
 #prints highest score
 def score(attempt_list):
-    print(colored('Your highest score is {}'.format(min(attempt_list)),'red'))
+    print(colored('Your Highest Score is {}'.format(min(attempt_list)),'blue'))
 
 
 #game
@@ -51,7 +51,7 @@ def start_game():
                     chances-=1
                     attempt = 5-chances
                     attempts_list.append(attempt)
-                    print(colored('Hurray!!! You have guessed the correct number in {} attempts.\n'.format(attempt),'blue'))
+                    print(colored('Hurray!!! You have guessed the correct number in {} attempts.\n'.format(attempt),'green'))
                     score(attempts_list)
                     time.sleep(1)
                     game_status = input('''\nDo you want to play again?
@@ -72,18 +72,18 @@ def start_game():
 
                 elif guess > sltd_num :
                     time.sleep(1)
-                    print('Oops! You have guessed a larger number')
+                    print(colored('Oops! You have guessed a larger number','red'))
                     chances-=1
                     print('You are left with {} chances'.format(chances))
 
                 elif guess < sltd_num :
                     time.sleep(1)
-                    print('Oops! You have guessed  a smaller number')
+                    print(colored('Oops! You have guessed  a smaller number','red'))
                     chances-=1
                     print('You are left with {} chances'.format(chances))
 
             elif chances == 0:
-                print('Sorry, you ran out of chances.')
+                print(colored('Sorry, you ran out of chances.','red'))
                 print('You have used all your 5 chances')
                 attempts_list.append(5)
                 print('The correct answer is {}\n'.format(sltd_num))
